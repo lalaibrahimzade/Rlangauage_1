@@ -11,9 +11,9 @@ print(model)
 summary(model)
 
 plot(veri$Ders_Calisma_Saatleri, veri$Sinav_Puani,
-     xlab = "Ders Çalışma Saatleri",
-     ylab = "Sınav Puanı",
-     main = "Ders Çalışma Saatleri ile Sınav Puanı Arasındaki İlişki",
+     xlab = "Ders CalD1Ema Saatleri",
+     ylab = "SD1nav PuanD1",
+     main = "Ders CalD1Ema Saatleri ile SD1nav PuanD1 ArasD1ndaki D0liEki",
      pch = 19, col = "blue")
 
 abline(model,col="red")
@@ -45,6 +45,36 @@ abline(cozum,col="red")
 
 
 
+
+
+#Introduction to Statistics and Data Analysis
+
+#11.12
+
+#The body mass index (BMI) and the systolic blood pressure of 6
+#people were measured to study a cardiovascular disease. The data are as follows:
+# Body mass index:26 23 27 28 24 25
+# Systolic blood pressure; 170 150 160 175 155 150
+#(a) The research hypothesis is that a high BMI relates to a high blood pressure.
+#Estimate the linear model where blood pressure is the outcome and BMI is the
+#covariate. Interpret the coefficients.
+#(b) Calculate R2 to judge the goodness of fit of the model.
+
+#a:
+bmi<-c(26, 23, 27, 28, 24, 25)
+blood_preasure<-c(170, 150, 160, 175, 155, 150)
+data<-data.frame(BMI=bmi, Blood_Preasure=blood_preasure)
+model<-lm(Blood_Preasure~BMI,data=data)
+summary(model)
+
+plot(data$Blood_Preasure, data$BMI,
+     xlab = "blood preasure",
+     ylab = "bmi",
+     pch = 19, col = "blue")
+
+#b
+rsquared <- summary(model)$r.squared
+print(rsquared)
 
 
 
